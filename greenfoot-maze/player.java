@@ -16,7 +16,6 @@ public class player extends Actor
     {
         // Add your action code here.
         checkKeyPress();
-        touchingWall();
         win();
     }
     private void checkKeyPress()
@@ -25,9 +24,10 @@ public class player extends Actor
         {
             if(getX()+30 < 600){
             setLocation(getX()+30, getY());
-            }
             MyWorld level = (MyWorld)getWorld();
-            level.subtractStep();
+            level.subtractStep(1);
+            } 
+            touchingWall();
             Greenfoot.delay(10);
         }
         
@@ -35,18 +35,20 @@ public class player extends Actor
         {
             if(getY()-30 > 0){
             setLocation(getX(), getY()-30);
-            }
             MyWorld level = (MyWorld)getWorld();
-            level.subtractStep();
+            level.subtractStep(1);
+            }
+            touchingWall();
             Greenfoot.delay(10);
         }
         if (Greenfoot.isKeyDown("a")) 
         {
             if(getX()-30 > 0){
             setLocation(getX()-30, getY());
-            }
             MyWorld level = (MyWorld)getWorld();
-            level.subtractStep();
+            level.subtractStep(1);
+            } 
+            touchingWall();
             Greenfoot.delay(10);
         }
         
@@ -54,9 +56,10 @@ public class player extends Actor
         {
             if(getY()+30 < 600){
             setLocation(getX(), getY()+30);
-            }
             MyWorld level = (MyWorld)getWorld();
-            level.subtractStep();
+            level.subtractStep(1);
+            }
+            touchingWall();
             Greenfoot.delay(10);
         }
     }   
@@ -64,11 +67,15 @@ public class player extends Actor
     {
       if(isTouching(shortWallH.class) || isTouching(shortWallV.class)){            
             setLocation(15, 585);
+            MyWorld level = (MyWorld)getWorld();
+            level.resetSteps();
         } 
     }
     public void win()
     {
       if(isTouching(goal.class)){
+            MyWorld level = (MyWorld)getWorld();
+            level.showText("Poggers, you cleared the level",300, 300);
             Greenfoot.stop();
         }
     }

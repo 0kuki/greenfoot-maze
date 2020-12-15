@@ -18,7 +18,7 @@ public class MyWorld extends World
         // Create a new world with 600x600 cells with a cell size of 1x1 pixels.
         super(600, 600, 1); 
         prepare();
-        movesNeeded = 38;
+        movesNeeded = 42;
     }
 
     private void prepare()
@@ -46,11 +46,11 @@ public class MyWorld extends World
         shortWallH shortWallH11 = new shortWallH();
         addObject(shortWallH11,225,105);
         shortWallH shortWallH12 = new shortWallH();
-        addObject(shortWallH12,45,350);
+        addObject(shortWallH12,45,345);
         shortWallH shortWallH13 = new shortWallH();
         addObject(shortWallH13,135,375);
         shortWallH shortWallH14 = new shortWallH();
-        addObject(shortWallH14,465,520);
+        addObject(shortWallH14,465,525);
         shortWallH shortWallH15 = new shortWallH();
         addObject(shortWallH15,435,495);
         shortWallH shortWallH16 = new shortWallH();
@@ -58,7 +58,7 @@ public class MyWorld extends World
         shortWallH shortWallH17 = new shortWallH();
         addObject(shortWallH17,555,525);
         shortWallH shortWallH18 = new shortWallH();
-        addObject(shortWallH18,550,140);
+        addObject(shortWallH18,555,135);
         shortWallH shortWallH19 = new shortWallH();
         addObject(shortWallH19,315,105);
         shortWallH shortWallH20 = new shortWallH();
@@ -94,9 +94,9 @@ public class MyWorld extends World
         shortWallV shortWallV14 = new shortWallV();
         addObject(shortWallV14,255,285);
         shortWallV shortWallV15 = new shortWallV();
-        addObject(shortWallV15,230,315);
+        addObject(shortWallV15,225,315);
         shortWallV shortWallV16 = new shortWallV();
-        addObject(shortWallV16,490,285);
+        addObject(shortWallV16,495,285);
         shortWallV shortWallV17 = new shortWallV();
         addObject(shortWallV17,405,285);
         shortWallV shortWallV18 = new shortWallV();
@@ -106,11 +106,11 @@ public class MyWorld extends World
         shortWallV shortWallV20 = new shortWallV();
         addObject(shortWallV20,345,75);
         shortWallV shortWallV21 = new shortWallV();
-        addObject(shortWallV21,200,45);
+        addObject(shortWallV21,195,45);
         shortWallV shortWallV22 = new shortWallV();
         addObject(shortWallV22,315,555);
         shortWallV shortWallV23 = new shortWallV();
-        addObject(shortWallV23,380,495);
+        addObject(shortWallV23,375,495);
         shortWallV shortWallV24 = new shortWallV();
         addObject(shortWallV24,525,375);
         shortWallV shortWallV25 = new shortWallV();
@@ -119,9 +119,17 @@ public class MyWorld extends World
         addObject(goal,585, 15);
         player player = new player();
         addObject(player, 15, 585);
+        showText("Moves left: " + movesNeeded, 65, 15);
     }
-    public void subtractStep() {
-        movesNeeded = movesNeeded-1;
-        showText("Moves left: " + movesNeeded, 50, 25);
+    public void subtractStep(int amount) {
+        movesNeeded = movesNeeded-amount;
+        if(movesNeeded == 0){
+            showText("You have no more moves idiot", 300, 300);
+            Greenfoot.stop();        
+        }
+        showText("Moves left: " + movesNeeded, 65, 15);
+    }
+    public void resetSteps() {
+        movesNeeded = 42;
     }
 }
