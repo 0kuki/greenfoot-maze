@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    public int movesNeeded;
+    private int movesNeeded;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -119,5 +119,9 @@ public class MyWorld extends World
         addObject(goal,585, 15);
         player player = new player();
         addObject(player, 15, 585);
+    }
+    public void subtractStep() {
+        movesNeeded = movesNeeded-1;
+        showText("Moves left: " + movesNeeded, 50, 25);
     }
 }

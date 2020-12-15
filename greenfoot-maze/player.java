@@ -26,6 +26,8 @@ public class player extends Actor
             if(getX()+30 < 600){
             setLocation(getX()+30, getY());
             }
+            MyWorld level = (MyWorld)getWorld();
+            level.subtractStep();
             Greenfoot.delay(10);
         }
         
@@ -34,13 +36,17 @@ public class player extends Actor
             if(getY()-30 > 0){
             setLocation(getX(), getY()-30);
             }
+            MyWorld level = (MyWorld)getWorld();
+            level.subtractStep();
             Greenfoot.delay(10);
         }
         if (Greenfoot.isKeyDown("a")) 
         {
             if(getX()-30 > 0){
             setLocation(getX()-30, getY());
-            }      
+            }
+            MyWorld level = (MyWorld)getWorld();
+            level.subtractStep();
             Greenfoot.delay(10);
         }
         
@@ -49,6 +55,8 @@ public class player extends Actor
             if(getY()+30 < 600){
             setLocation(getX(), getY()+30);
             }
+            MyWorld level = (MyWorld)getWorld();
+            level.subtractStep();
             Greenfoot.delay(10);
         }
     }   
