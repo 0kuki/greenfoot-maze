@@ -16,13 +16,18 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x600 cells with a cell size of 1x1 pixels.
-        super(600, 600, 1); 
-        prepare();
+        super(600, 600, 1);
+        prepareMain();
         movesNeeded = 42;
     }
-
-    private void prepare()
-    {
+    private void prepareMain() {
+    player player = new player();
+        addObject(player, 15, 585);
+        level1 level1 = new level1();
+        addObject(level1,150, 15);        
+    }
+    public void prepareLvl1()
+    { 
         shortWallH sWH = new shortWallH();
         addObject(sWH, 15, 45);
         shortWallH shortWallH2 = new shortWallH();

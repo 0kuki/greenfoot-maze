@@ -16,6 +16,7 @@ public class player extends Actor
     {
         // Add your action code here.
         checkKeyPress();
+        touchingLvl1();
         win();
     }
     private void checkKeyPress()
@@ -69,6 +70,14 @@ public class player extends Actor
             setLocation(15, 585);
             MyWorld level = (MyWorld)getWorld();
             level.resetSteps();
+        } 
+    }
+    public void touchingLvl1() 
+    {
+      if(isTouching(level1.class)){ 
+            MyWorld level = (MyWorld)getWorld();
+            removeObject(level1);
+            level.prepareLvl1();
         } 
     }
     public void win()
