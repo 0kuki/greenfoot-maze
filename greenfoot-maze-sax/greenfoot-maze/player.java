@@ -68,22 +68,21 @@ public class player extends Actor
     {
       if(isTouching(shortWallH.class) || isTouching(shortWallV.class)){            
             setLocation(15, 585);
-            MyWorld level = (MyWorld)getWorld();
+            lvl1 level = (lvl1)getWorld();
             level.resetSteps();
         } 
     }
     public void touchingLvl1() 
     {
       if(isTouching(level1.class)){ 
-            MyWorld level = (MyWorld)getWorld();
-            removeObject(level1);
-            level.prepareLvl1();
+            lvl1 lvl1 = (lvl1)getWorld();
+            lvl1.prepare();
         } 
     }
     public void win()
     {
       if(isTouching(goal.class)){
-            MyWorld level = (MyWorld)getWorld();
+            lvl1 level = (lvl1)getWorld();
             level.showText("Poggers, you cleared the level",300, 300);
             Greenfoot.stop();
         }
