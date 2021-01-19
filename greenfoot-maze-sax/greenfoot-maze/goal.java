@@ -1,19 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class goal here.
+ * The Goal in which a player needs to move to in order to win
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author GCS 
+ * @version 1.0
  */
 public class goal extends Actor
 {
     /**
-     * Act - do whatever the goal wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * The Actor itself does nothing
      */
     public void act() 
     {
-        // Add your action code here.
+        
     }    
 }

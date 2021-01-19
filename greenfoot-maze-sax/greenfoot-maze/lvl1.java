@@ -1,13 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class lvl1 here.
+ * The first Level. A Maze which is pretty easy.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author GCS 
+ * @version 1.0
  */
 public class lvl1 extends World
 {
+    //How many moves are needed to get to the goal, here the goal is a Level
     private int movesNeeded;
     /**
      * Constructor for objects of class lvl1.
@@ -16,13 +17,16 @@ public class lvl1 extends World
     public lvl1()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 600, 1); 
+        super(600, 600, 1);
+        // Set the moves needed to 42
         movesNeeded = 42;
         prepare();
         
     }
+    //Preparing the first Level
     public void prepare()
     { 
+        //Adding all the needed Actors
         shortWallH sWH = new shortWallH();
         addObject(sWH, 15, 45);
         shortWallH shortWallH2 = new shortWallH();
@@ -115,20 +119,25 @@ public class lvl1 extends World
         addObject(shortWallV24,525,375);
         shortWallV shortWallV25 = new shortWallV();
         addObject(shortWallV25,195,525);
+        //Adding one goal and one player
         goal goal = new goal();
         addObject(goal,585, 15);
-        player player = new player();
-        addObject(player, 15, 585);
+        playerlvl1 playerlvl1 = new playerlvl1();
+        addObject(playerlvl1, 15, 585);
         showText("Moves left: " + movesNeeded, 65, 15);
     }
+    //Method to Subtract a Step every time the Player moves
     public void subtractStep(int amount) {
         movesNeeded = movesNeeded-amount;
+        //If theres no moves left, the game stops
         if(movesNeeded == 0){
             showText("You have no more moves idiot", 300, 300);
             Greenfoot.stop();        
         }
+        //Showing the moves the player has left in the top left corner
         showText("Moves left: " + movesNeeded, 65, 15);
     }
+    //Method to reset the moves left back to 42
     public void resetSteps() {
         movesNeeded = 42;
     }
