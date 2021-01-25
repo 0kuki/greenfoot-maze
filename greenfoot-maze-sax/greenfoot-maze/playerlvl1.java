@@ -85,7 +85,7 @@ public class playerlvl1 extends Actor
       if(isTouching(goal.class)){
             //Show the winners text
             lvl1 level = (lvl1)getWorld();
-            level.showText("Good Job, you cleared the level",300, 300);
+            level.showText("Good Job, you cleared Level 1",300, 300);
             Greenfoot.stop();
         }
     }   
