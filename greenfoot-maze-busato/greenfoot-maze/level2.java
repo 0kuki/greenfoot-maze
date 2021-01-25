@@ -1,28 +1,29 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * The second Level. A Maze a little bit harder.
+ *  Iteration from level1 by GCS
+ * @author DB 
+ * @version 1.0
  */
-public class MyWorld extends World
+public class level2 extends World
 {
+    //How many moves are needed to get to the goal
     private int movesNeeded;
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
-    public MyWorld()
-    {    
-        // Create a new world with 600x600 cells with a cell size of 1x1 pixels.
-        super(600, 600, 1); 
-        prepare();
-        movesNeeded = 42;
-    }
 
-    private void prepare()
-    {
+    public level2()
+    {    
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(600, 600, 1);
+        // Set the moves allowed to 42
+        movesNeeded = 42;
+        prepare();
+        
+    }
+    //Preparing the first Level
+    public void prepare()
+    { 
+        //Adding all the needed Actors
         shortWallH sWH = new shortWallH();
         addObject(sWH, 15, 45);
         shortWallH shortWallH2 = new shortWallH();
@@ -115,20 +116,25 @@ public class MyWorld extends World
         addObject(shortWallV24,555,375);
         shortWallV shortWallV25 = new shortWallV();
         addObject(shortWallV25,195,525);
+        //Adding one goal and one player
         goal goal = new goal();
         addObject(goal,585, 15);
-        player player = new player();
-        addObject(player, 15, 585);
+        player02 player02 = new player02();
+        addObject(player02, 15, 585);
         showText("Moves left: " + movesNeeded, 65, 15);
     }
+    //"Counting steps" backwards until left with Zero
     public void subtractStep(int amount) {
         movesNeeded = movesNeeded-amount;
+        //If there are no moves left, the game stops
         if(movesNeeded == 0){
             showText("You have no more moves idiot", 300, 300);
             Greenfoot.stop();        
         }
+        //Displaying moves left in top left corner
         showText("Moves left: " + movesNeeded, 65, 15);
     }
+    //reset the moves left back to 42
     public void resetSteps() {
         movesNeeded = 42;
     }

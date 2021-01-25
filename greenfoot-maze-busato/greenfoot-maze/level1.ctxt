@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=level1
+comment0.text=\r\n\ The\ first\ Level.\ A\ Maze\ which\ is\ pretty\ easy.\r\n\ \r\n\ @author\ GCS\ \r\n\ @version\ 1.0\r\n
+comment1.params=
+comment1.target=level1()
+comment2.params=
+comment2.target=void\ prepare()
+comment3.params=amount
+comment3.target=void\ subtractStep(int)
+comment4.params=
+comment4.target=void\ resetSteps()
+numComments=5
