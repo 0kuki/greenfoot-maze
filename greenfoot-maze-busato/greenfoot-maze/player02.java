@@ -37,10 +37,10 @@ public class player02 extends Actor
         //If Key "w" is pressed, move towards that direction
         if (Greenfoot.isKeyDown("w")) 
         {
-            if(getY()-30 > 0){
-            setLocation(getX(), getY()-30);
-            level2 level = (level2)getWorld();
-            level.subtractStep(1);
+           if(getY()-30 > 0){
+               setLocation(getX(), getY()-30);
+               level2 level = (level2)getWorld();
+               level.subtractStep(1);
             }
             touchingWall();
             Greenfoot.delay(10);
