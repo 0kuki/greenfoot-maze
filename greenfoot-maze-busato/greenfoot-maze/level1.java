@@ -1,28 +1,29 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * The first Level. A Maze which is pretty easy.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author GCS 
+ * @version 1.0
  */
-public class MyWorld extends World
+public class level1 extends World
 {
+    //Initialize Int for Setting the allowed amount of moves
     private int movesNeeded;
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
-    public MyWorld()
+    //Constructor for objects of class level1
+    public level1()
     {    
-        // Create a new world with 600x600 cells with a cell size of 1x1 pixels.
-        super(600, 600, 1); 
-        prepare();
+        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        super(600, 600, 1);
+        // Set the moves allowed to 42
         movesNeeded = 42;
+        prepare();
+        
     }
-
-    private void prepare()
-    {
+    //Preparing the first Level
+    public void prepare()
+    { 
+        //Adding all the needed Actors
         shortWallH sWH = new shortWallH();
         addObject(sWH, 15, 45);
         shortWallH shortWallH2 = new shortWallH();
@@ -36,7 +37,7 @@ public class MyWorld extends World
         shortWallH shortWallH6 = new shortWallH();
         addObject(shortWallH6,375,165);
         shortWallH shortWallH7 = new shortWallH();
-        addObject(shortWallH7,285,315);
+        addObject(shortWallH7,285,345);
         shortWallH shortWallH8 = new shortWallH();
         addObject(shortWallH8,165,435);
         shortWallH shortWallH9 = new shortWallH();
@@ -54,7 +55,7 @@ public class MyWorld extends World
         shortWallH shortWallH15 = new shortWallH();
         addObject(shortWallH15,435,495);
         shortWallH shortWallH16 = new shortWallH();
-        addObject(shortWallH16,495,405);
+        addObject(shortWallH16,465,405);
         shortWallH shortWallH17 = new shortWallH();
         addObject(shortWallH17,555,525);
         shortWallH shortWallH18 = new shortWallH();
@@ -100,7 +101,7 @@ public class MyWorld extends World
         shortWallV shortWallV17 = new shortWallV();
         addObject(shortWallV17,405,285);
         shortWallV shortWallV18 = new shortWallV();
-        addObject(shortWallV18,435,375);
+        addObject(shortWallV18,415,375);
         shortWallV shortWallV19 = new shortWallV();
         addObject(shortWallV19,435,135);
         shortWallV shortWallV20 = new shortWallV();
@@ -112,23 +113,28 @@ public class MyWorld extends World
         shortWallV shortWallV23 = new shortWallV();
         addObject(shortWallV23,375,495);
         shortWallV shortWallV24 = new shortWallV();
-        addObject(shortWallV24,555,375);
+        addObject(shortWallV24,525,375);
         shortWallV shortWallV25 = new shortWallV();
         addObject(shortWallV25,195,525);
+        //Adding one goal and one player
         goal goal = new goal();
         addObject(goal,585, 15);
-        player player = new player();
-        addObject(player, 15, 585);
+        player01 player01 = new player01();
+        addObject(player01, 15, 585);
         showText("Moves left: " + movesNeeded, 65, 15);
     }
+    //"Counting steps" backwards until left with Zero
     public void subtractStep(int amount) {
         movesNeeded = movesNeeded-amount;
+        //If there are no moves left, the game stops
         if(movesNeeded == 0){
             showText("You have no more moves idiot", 300, 300);
             Greenfoot.stop();        
         }
+        //Displaying moves left in top left corner
         showText("Moves left: " + movesNeeded, 65, 15);
     }
+    //reset the moves left back to 42
     public void resetSteps() {
         movesNeeded = 42;
     }

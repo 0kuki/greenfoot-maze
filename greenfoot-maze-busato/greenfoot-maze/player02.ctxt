@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=player02
+comment0.text=\r\n\ The\ player\ that\ can\ be\ moved\ around\ and\ needs\ to\ go\ to\ the\ goal\ in\ order\ to\ win\r\n\ \r\n\ @author\ GCS\r\n\ @version\ 1.0\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ The\ actor\ Method\ checks\ for\ a\ key\ being\ pressed\ and\ if\ the\r\n\ player\ is\ touching\ the\ goal\ for\ Level\ 1\r\n
+comment2.params=
+comment2.target=void\ checkKeyPress()
+comment3.params=
+comment3.target=void\ touchingWall()
+comment4.params=
+comment4.target=void\ win()
+numComments=5
