@@ -1,4 +1,8 @@
-Greenfoot-Maze - by Sax, Busato
+PROJECT TITLE: Greenfoot-maze
+PURPOSE OF PROJECT: Video game
+VERSION or DATE: 26.01.2020
+HOW TO START THIS PROJECT: press "Run" in Greenfoot
+AUTHORS: Gian-Carlo Sax, Daniel Busato
 
 1. Open the Project in Greenfoot
 
